@@ -5,4 +5,3 @@ for i in range(0, 100):
                 print("{}".format(lead_zer), end=", ")
         else:
                 print("{}".format(lead_zer))
-
