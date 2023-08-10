@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name == "__main__":
+if __name__ == "__main__":
     from sys import argv
     arg_count = 0
     for argc in range(0, len(argv)):
