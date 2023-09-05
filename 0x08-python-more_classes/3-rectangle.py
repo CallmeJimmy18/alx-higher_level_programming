@@ -5,7 +5,7 @@
 class Rectangle:
     """Represent a rectangle."""
 
-    def __init__(self, width=0, height= 0):
+    def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
         Args:
@@ -24,7 +24,7 @@ class Rectangle:
     def width(self, value):
         if (not isinstance(value, int)):
             raise TypeError("width must be an integer")
-        if (value < 0 ):
+        if (value < 0):
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -50,8 +50,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
-    
+
     def __str__(self):
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         rect = []
