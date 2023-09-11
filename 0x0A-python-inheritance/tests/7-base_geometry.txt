@@ -1,0 +1,42 @@
+Tests for 7-base_geometry.py
+
+----------------------------
+
+Import the BaseGeometry module
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+---------------------------
+
+Print area
+   >>> a = BaseGeometry()
+   >>> a.area()
+   TraceBack (most recent call):
+   Exception: area() is not implemented
+
+Not int
+   >>> a = BaseGeometry()
+   >>> a.integer_validator("name", "7")
+   TraceBack (most recent call):
+            ...
+   TypeError: name must be an integer
+
+Is negative
+   >>> a = BaseGeometry()
+   >>> a.integer_validator("name", -4)
+   TraceBack (most recent call):
+            ...
+   ValueError: name must be greater than 0
+
+Is Zero
+   >>> a = BaseGeometry()
+   >>> a.integer_validator("name", 0)
+   TraceBack (most recent call):
+            ...
+   ValueError: name must be greater than 0
+
+Test if it a boolean
+   >>> a = BaseGeometry()
+   >>> a.integer_validator("name", True)
+   TraceBack (most recent call):
+            ...
+   TypeError: name must be an integer
