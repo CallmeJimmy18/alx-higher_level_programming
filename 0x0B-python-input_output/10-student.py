@@ -19,6 +19,9 @@ class Student:
         def to_json(self):
             """ retrieves a dictionary representation of a Student
 
+            If attrs is a list of strings, represents only those attributes 
+            included in the list.
+
             Args:
                 attrs (list): The attributes to represent.
             """
