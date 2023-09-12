@@ -8,9 +8,9 @@ class Student:
         """ Initializes the student class
 
         Args:
-            first_name: the first name of the student
-            last_name: this is the last name of the student
-            age: the age of the student
+            first_name (str): the first name of the student
+            last_name (str): this is the last name of the student
+            age (int): the age of the student
         """
         self.first_name = first_name
         self.last_name = last_name
@@ -20,7 +20,7 @@ class Student:
             """ retrieves a dictionary representation of a Student
 
             Args:
-                attrs: (Optional) The attributes to represent.
+                attrs (list): The attributes to represent.
             """
             if (type(attrs) == list and
                     all(type(element) == str for ele in attrs)):
