@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-lists all State objects from the database hbtn_0e_6_usa
+adds the State object “Louisiana” to the database hbtn_0e_6_usa
 """
 import sys
 from sqlalchemy import create_engine

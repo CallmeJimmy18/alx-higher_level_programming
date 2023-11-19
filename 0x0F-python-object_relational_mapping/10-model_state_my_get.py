@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-lists all State objects from the database hbtn_0e_6_usa
+prints the State object with the name passed as argument from the database
 """
 import sys
 from sqlalchemy import create_engine
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).filter(State.name.like(statinpt,))
-    if instance is None:
-        print("Not found")
-    else:
+    try:
         print(instance[0].id)
+    except IndexError:
+        print("Not found")

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-lists all State objects from the database hbtn_0e_6_usa
+deletes all State objects with a name containing the letter a
 """
 import sys
 from sqlalchemy import create_engine
@@ -14,6 +14,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.query(State).filter(State.name.like("%a%"))
-    .delete(synchronize_session=False)
+    for instance in session.query(State).filter(State.name.like('%a%')):
+        session.delete(instance)
     session.commit()
