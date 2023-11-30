@@ -1,9 +1,3 @@
 #!/bin/bash
 #  sends a GET request to the URL, and displays the body
-
-response=$(curl -L -s "$1")
-
-status_code=$(echo "$response" | grep -Fi HTTP/ | awk '{print $2}')
-if [ "$status_code" -eq 200 ]; then
-	echo "$response" | awk '/^$/{flag=1; next} flag{print}'
-fi
+[ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ] && curl "$1"
